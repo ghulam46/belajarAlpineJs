@@ -36,12 +36,15 @@
     <!-- FITUR TAMBAH DATA -->
     <div class="mt-5 p-5"
         x-data="{
-            count: 0
+            count: 0,
+            showAlert(){alert('HelloWorld!')}
         }"
     >
         <div class="" x-data="{pesan: 'Hello World'}">
-            <h2 x-text="pesan"></h2>
+            <h2 x-text="pesan"></h2><br>
         </div>
+
+        <button x-on:click="showAlert()" class="bg-blue-300 p-3">Tampilkan</button><br><br>
 
         <button class="bg-slate-400 p-3 rounded-sm" x-on:click="count++">Increment</button>
         <span x-text="count" class="mx-3"></span>
