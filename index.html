@@ -46,7 +46,8 @@
 
         <button x-on:click="showAlert()" class="bg-blue-300 p-3">Tampilkan</button><br><br>
 
-        <button class="bg-slate-400 p-3 rounded-sm" x-on:click="count++">Increment</button>
+        <!-- x-on:click shorthand to @click -->
+        <button class="bg-slate-400 p-3 rounded-sm" @click="count++">Increment</button>
         <span x-text="count" class="mx-3"></span>
     </div>
 
