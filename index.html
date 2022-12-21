@@ -49,5 +49,24 @@
         <button class="bg-slate-400 p-3 rounded-sm" x-on:click="count++">Increment</button>
         <span x-text="count" class="mx-3"></span>
     </div>
+
+    <!-- x-init -->
+    <!-- CARA 1 x-init -->
+    <div class=""
+        x-data="{ message: 'ini komponen alpine' }"
+    >
+        <div class="" x-init="console.log('ini pesan dari x-init')"></div>
+    </div>
+
+    <!-- CARA 2 x-init didalam x-data -->
+    <div class=""
+        x-data="{
+            message2: 'ini komponen alpine 2',
+            init(){
+                console.log('ini pesan dari attribut init di attribut x-data')
+            }
+        }"
+    >
+    </div>
 </body>
 </html>
