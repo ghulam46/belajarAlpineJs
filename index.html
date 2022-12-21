@@ -69,5 +69,13 @@
         }"
     >
     </div>
+
+    <div class=""
+        x-data="{
+            message3: 'ini komponen alpine 3'
+        }"
+    >
+        <div x-init="$nextTick(() => { console.log('ini dieksekusi ketika komponen alpine yaitu message3 sudah selesai di render') })"></div>
+    </div>
 </body>
 </html>
