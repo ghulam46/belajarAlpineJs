@@ -32,5 +32,15 @@
             <div class="">Content3...</div>
         </div>
     </div>
+
+    <!-- FITUR TAMBAH DATA -->
+    <div class="mt-5 p-5"
+        x-data="{
+            count: 0
+        }"
+    >
+        <button class="bg-slate-400 p-3 rounded-sm" x-on:click="count++">Increment</button>
+        <span x-text="count" class="mx-3"></span>
+    </div>
 </body>
 </html>
