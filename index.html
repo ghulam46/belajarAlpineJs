@@ -1,81 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belajar Alpine JS</title>
 
     <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- alpine js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-</head>
-<body>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
     <!-- 1. x-data sebagai data yang akan di berikan ke element tertentu
             data open bernilai false
     -->
     <div x-data="{ open: false }" class="mx-5 mt-5">
-        <h1 class="font-semibold text-xl bg-slate-500 w-28 p-2 text-white">Alpine JS</h1>
-        <!-- 2. menambahkan event ketika di klik @click data open bernilai true -->
-        <button @click="open = true" class="mt-5 bg-orange-700 text-white p-3">Toggle</button>
-     
-        <!-- x-show untuk menampilkan element
+      <h1 class="font-semibold text-xl bg-slate-500 w-28 p-2 text-white">
+        Alpine JS
+      </h1>
+      <!-- 2. menambahkan event ketika di klik @click data open bernilai true -->
+      <button @click="open = true" class="mt-5 bg-orange-700 text-white p-3">
+        Toggle
+      </button>
+
+      <!-- x-show untuk menampilkan element
              @click.outside berguna ketika menghilangkan element dropdown diluar element
              atau ketika klik di sembarang kecuali di element yg bersangkutan
         -->
-        <div x-show="open" @click.outside="open = false" class="bg-orange-400 w-28 mt-1 p-3 text-black">
-            <div class="">Content1...</div>
-            <div class="">Content2...</div>
-            <div class="">Content3...</div>
-        </div>
+      <div
+        x-show="open"
+        @click.outside="open = false"
+        class="bg-orange-400 w-28 mt-1 p-3 text-black"
+      >
+        <div class="">Content1...</div>
+        <div class="">Content2...</div>
+        <div class="">Content3...</div>
+      </div>
     </div>
 
     <!-- FITUR TAMBAH DATA -->
-    <div class="mt-5 p-5"
-        x-data="{
+    <div
+      class="mt-5 p-5"
+      x-data="{
             count: 0,
             showAlert(){alert('HelloWorld!')}
         }"
     >
-        <div class="" x-data="{pesan: 'Hello World'}">
-            <h2 x-text="pesan"></h2><br>
-        </div>
+      <div class="" x-data="{pesan: 'Hello World'}">
+        <h2 x-text="pesan"></h2>
+        <br />
+      </div>
 
-        <button x-on:click="showAlert()" class="bg-blue-300 p-3">Tampilkan</button><br><br>
+      <button x-on:click="showAlert()" class="bg-blue-300 p-3">Tampilkan</button
+      ><br /><br />
 
-        <!-- x-on:click shorthand to @click -->
-        <button class="bg-slate-400 p-3 rounded-sm" @click="count++">Increment</button>
-        <span x-text="count" class="mx-3"></span>
+      <!-- x-on:click shorthand to @click -->
+      <button class="bg-slate-400 p-3 rounded-sm" @click="count++">
+        Increment
+      </button>
+      <span x-text="count" class="mx-3"></span>
     </div>
 
     <!-- x-init -->
     <!-- CARA 1 x-init -->
-    <div class=""
-        x-data="{ message: 'ini komponen alpine' }"
-    >
-        <div class="" x-init="console.log('ini pesan dari x-init')"></div>
+    <div class="" x-data="{ message: 'ini komponen alpine' }">
+      <div class="" x-init="console.log('ini pesan dari x-init')"></div>
     </div>
 
     <!-- CARA 2 x-init didalam x-data -->
-    <div class=""
-        x-data="{
+    <div
+      class=""
+      x-data="{
             message2: 'ini komponen alpine 2',
             init(){
                 console.log('ini pesan dari attribut init di attribut x-data')
             }
         }"
-    >
-    </div>
+    ></div>
 
-    <div class=""
-        x-data="{
+    <div
+      class=""
+      x-data="{
             message3: 'ini komponen alpine 3'
         }"
     >
-        <div x-init="$nextTick(() => { console.log('ini dieksekusi ketika komponen alpine yaitu message3 sudah selesai di render') })"></div>
+      <div
+        x-init="$nextTick(() => { console.log('ini dieksekusi ketika komponen alpine yaitu message3 sudah selesai di render') })"
+      ></div>
     </div>
-</body>
+
+    <div x-data="{ message :  ' ' }">
+      <input type="text" x-model="message" class="border-2" />
+      <span x-text="message"></span>
+    </div>
+  </body>
 </html>
