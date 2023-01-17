@@ -107,5 +107,15 @@
         Change Message
       </button>
     </div>
+
+    <div x-data="{ color :  ' ' }">
+      <select x-model="color">
+        <option value="" disabled>Select A Color</option>
+        <option value="Red">Red</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+      </select>
+      Color : <span x-text="color"></span>
+    </div>
   </body>
 </html>
