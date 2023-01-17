@@ -94,9 +94,18 @@
       ></div>
     </div>
 
+    <!-- X-MODEL -->
+    <h1>x-model</h1>
+    <div x-data="{ message :  ' ' }">
+      <input type="text" x-model="message" class="border-2 mb-3" />
+      <span x-text="message"></span>
+    </div>
+
     <div x-data="{ message :  ' ' }">
       <input type="text" x-model="message" class="border-2" />
-      <span x-text="message"></span>
+      <button x-on:click="message='Foala...'" class="px-3 bg-gray-100">
+        Change Message
+      </button>
     </div>
   </body>
 </html>
