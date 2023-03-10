@@ -19,5 +19,19 @@
         </div>
     </div>
 
+    <!-- scope -->
+    <div x-data="{foo: 'bar'}">
+        <span x-text="foo"></span>
+
+        <div x-data="bar: 'baz">
+            <span x-text="foo"></span>
+            
+            <div x-data="{foo: 'bob'}">
+                <span x-text="foo"></span>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
